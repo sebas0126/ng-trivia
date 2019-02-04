@@ -1,0 +1,15 @@
+<div id="content">
+  <section id="question">
+    {{currentQuestion.question}}
+  </section>
+  <section id="answers">
+    <ul>
+        <li class="answer" *ngFor="let answer of currentQuestion.answers; let i = index" (click)="verifyAnswer(i); nextQuestion()">
+          {{answer}}
+        </li>
+    </ul>
+  </section>
+  <section id="score">
+    <div *ngIf="showScore">Respuestas correctas: {{score}}</div> 
+  </section>
+</div>
